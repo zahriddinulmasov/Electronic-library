@@ -1,0 +1,61 @@
+.main {
+  &__bokmark {
+    padding: 15px 20px;
+    width: 22%;
+  }
+}
+
+.books {
+  padding: 20px 10px;
+
+  &__item {
+    margin: 10px;
+    padding: 13px 15px 13px 18px;
+    background: #fff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+
+  &__img-wrapper {
+    border-radius: 5px;
+    padding: 18px 28px 18px 20px;
+    background: #f8fafd;
+  }
+
+  &__img {
+    border-radius: 5px;
+  }
+
+  &__author {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    color: #757881;
+  }
+
+  &__year {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    color: #757881;
+  }
+
+  &__btn-bookmark {
+    padding: 10px 25px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+  }
+
+  &__btn-more-info {
+    padding: 10px 25px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__btn-read {
+    padding: 10px 25px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

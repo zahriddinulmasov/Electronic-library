@@ -1,0 +1,47 @@
+.login {
+  background-image: url(../../images/login_fon.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__logo {
+    margin-bottom: 30px;
+    margin-left: -9px;
+  }
+
+  &__wrapper {
+    margin: auto;
+  }
+  &__input-email {
+    margin-top: -29px;
+    margin-left: -9px;
+    padding-left: 34px;
+    color: #ffffff;
+    background: transparent;
+    border: 1px solid #ffffff;
+  }
+
+  &__input-email::placeholder {
+    color: white;
+  }
+
+  &__input-password {
+    margin-top: -29px;
+    margin-left: -9px;
+    padding-left: 34px;
+    color: #ffffff;
+    background: transparent;
+    border: 1px solid #ffffff;
+  }
+
+  &__input-password::placeholder {
+    color: white;
+  }
+
+  &__btn {
+    margin-left: -9px;
+  }
+
+  &__link {
+    margin-right: 9px;
+  }
+}

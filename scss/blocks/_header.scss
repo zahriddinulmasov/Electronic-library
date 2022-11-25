@@ -1,0 +1,24 @@
+.header {
+  &__search {
+    border-radius: 30px;
+    width: 100vh;
+  }
+
+  &__search::placeholder {
+    color: rgba(0, 0, 0, 0.24);
+  }
+
+  &__logaut {
+    background: #0d75ff;
+    border-radius: 4px;
+    padding: 10px 23px;
+  }
+
+  &__logaut:hover{
+    opacity: 0.9;
+  }
+
+  &__logaut:active{
+    opacity: 0.7;
+  }
+}

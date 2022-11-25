@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Login page</title>
+  </head>
+  <body class="login">
+    <div class="login__wrapper">
+      <div class="text-center">
+        <img
+          class="login__logo"
+          src="./images/login_logo.png"
+          alt="logo_site"
+          width="190"
+          height="40"
+        />
+      </div>
+      <form class="login__form">
+        <div class="">
+          <img
+            src="./images/user.png"
+            alt="logo_user-name"
+            width="20"
+            height="20"
+          />
+          <input
+            class="login__input-email form-control mb-2"
+            id="login"
+            type="email"
+            value="eve.holt@reqres.in"
+            placeholder="Email ..."
+          />
+        </div>
+
+        <div class="">
+          <img
+            src="./images/lock.png"
+            alt="logo_password"
+            width="20"
+            height="20"
+          />
+          <input
+            class="login__input-password form-control mb-2"
+            id="parol"
+            type="password"
+            value="cityslicka"
+            placeholder="Password ..."
+          />
+        </div>
+
+        <div class="warning text-start d-none" style="margin-left: -9px;">
+          <p class="m-0 text-danger" style="font-size: 12px;">Your login or password is incorrect!</p>
+        </div>
+
+        <button class="login__btn my-2 btn btn-outline-primary w-100">
+          Submit
+        </button>
+      </form>
+
+      <div class="text-end">
+        <a
+          class="login__link text-white text-decoration-none"
+          href="./registration.html"
+          >Forgot password?</a
+        >
+      </div>
+    </div>
+
+    <script src="./bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
