@@ -1,0 +1,27 @@
+.bookmar__subtitle {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 155.6%;
+  color: #000000;
+}
+
+.bookmark {
+  width: 232px;
+  &__item {
+    margin: 7.5px 0;
+    padding: 10px 5px;
+    background: #f8fafd;
+    border-radius: 4px;
+  }
+  &__title {
+    line-height: 15px;
+    color: #000000;
+  }
+
+  &__author {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    color: #757881;
+  }
+}

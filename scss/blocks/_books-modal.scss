@@ -1,0 +1,46 @@
+.modall {
+  &__img {
+    border-radius: 5px;
+    height: 297px;
+    margin-left: 18%;
+  }
+
+  &__decs {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 170.3%;
+    color: #58667e;
+  }
+
+  &__author {
+    color: #0D75FF;
+    padding: 5px 20px;
+    background: rgba(13, 117, 255, 0.09);
+    border-radius: 30px;
+  }
+
+  &__published{
+    color: #0D75FF;
+    padding: 5px 20px;
+    background: rgba(13, 117, 255, 0.09);
+    border-radius: 30px;
+  }
+  &__publishers{
+    color: #0D75FF;
+    padding: 5px 20px;
+    background: rgba(13, 117, 255, 0.09);
+    border-radius: 30px;
+  }
+  &__categories{
+    color: #0D75FF;
+    padding: 5px 20px;
+    background: rgba(13, 117, 255, 0.09);
+    border-radius: 30px;
+  }
+  &__pages-count{
+    color: #0D75FF;
+    padding: 5px 20px;
+    background: rgba(13, 117, 255, 0.09);
+    border-radius: 30px;
+  }
+}

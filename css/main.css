@@ -348,7 +348,7 @@ img {
 
 .header__search {
   border-radius: 30px;
-  width: 100vh;
+  width: 80vh;
 }
 .header__search::-moz-placeholder {
   color: rgba(0, 0, 0, 0.24);
@@ -373,11 +373,11 @@ img {
 
 .main__bokmark {
   padding: 15px 20px;
-  width: 22%;
+  width: 27%;
 }
 
 .books {
-  padding: 20px 10px;
+  padding: 20px 7px 4px 15px;
 }
 .books__item {
   margin: 10px;
@@ -390,9 +390,11 @@ img {
   border-radius: 5px;
   padding: 18px 28px 18px 20px;
   background: #f8fafd;
+  height: 333px;
 }
 .books__img {
   border-radius: 5px;
+  height: 297px;
 }
 .books__author {
   font-weight: 500;
@@ -407,13 +409,13 @@ img {
   color: #757881;
 }
 .books__btn-bookmark {
-  padding: 10px 25px;
+  padding: 10px 33.5px;
   font-size: 14px;
   line-height: 17px;
   color: #000000;
 }
 .books__btn-more-info {
-  padding: 10px 25px;
+  padding: 10px 33.5px;
   font-size: 14px;
   line-height: 17px;
 }
@@ -487,4 +489,77 @@ img {
   font-size: 14px;
   line-height: 17px;
   color: #FFFFFF;
+}
+
+.modall__img {
+  border-radius: 5px;
+  height: 297px;
+  margin-left: 18%;
+}
+.modall__decs {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 170.3%;
+  color: #58667e;
+}
+.modall__author {
+  color: #0D75FF;
+  padding: 5px 20px;
+  background: rgba(13, 117, 255, 0.09);
+  border-radius: 30px;
+}
+.modall__published {
+  color: #0D75FF;
+  padding: 5px 20px;
+  background: rgba(13, 117, 255, 0.09);
+  border-radius: 30px;
+}
+.modall__publishers {
+  color: #0D75FF;
+  padding: 5px 20px;
+  background: rgba(13, 117, 255, 0.09);
+  border-radius: 30px;
+}
+.modall__categories {
+  color: #0D75FF;
+  padding: 5px 20px;
+  background: rgba(13, 117, 255, 0.09);
+  border-radius: 30px;
+}
+.modall__pages-count {
+  color: #0D75FF;
+  padding: 5px 20px;
+  background: rgba(13, 117, 255, 0.09);
+  border-radius: 30px;
+}
+
+.bookmar__subtitle {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 155.6%;
+  color: #000000;
+}
+
+.bookmark {
+  width: 232px;
+}
+.bookmark__item {
+  margin: 7.5px 0;
+  padding: 10px 5px;
+  background: #f8fafd;
+  border-radius: 4px;
+}
+.bookmark__title {
+  line-height: 15px;
+  color: #000000;
+}
+.bookmark__author {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  color: #757881;
+}
+
+.pages__list {
+  max-width: 500px;
 }/*# sourceMappingURL=main.css.map */
