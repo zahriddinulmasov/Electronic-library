@@ -46,8 +46,9 @@ let orderBy = "&";
 let totalResult;
 let pagesLength;
 
-const localData = JSON.parse(window.localStorage.getItem("bookmark"))
-const boormarkArr = localData || [];
+const localData = JSON.parse(window.localStorage.getItem("bookmark"));
+const bookmarkArr = localData || [];
+resultBookmark.textContent = bookmarkArr.length;
 
 // SEARCH:
 elInput.addEventListener("input", function () {
@@ -56,6 +57,33 @@ elInput.addEventListener("input", function () {
 
   getBooks();
 });
+
+// MODE:
+mode.addEventListener("click", function(evt){
+  if(evt.target.matches(".nighttime")){
+    body.classList.remove("bg-opacity-25")
+    body.classList.add("opacity-75")
+    body.classList.add("bg-opacity-50")
+    elInput.classList.remove("border-0")
+    mode.setAttribute("src", "./images/Solnse.png")
+    mode.classList.remove("nighttime")
+    mode.classList.add("daytime")
+    mainId.classList.remove("bg-light")
+    mainId.classList.add("bg-secondary")
+    mainId.classList.add("bg-opacity-25")
+  } else {
+    body.classList.add("bg-opacity-25")
+    body.classList.remove("opacity-75")
+    body.classList.remove("bg-opacity-50")
+    elInput.classList.add("border-0")
+    mode.setAttribute("src", "./images/moon.png")
+    mode.classList.add("nighttime")
+    mode.classList.remove("daytime")
+    mainId.classList.add("bg-light")
+    mainId.classList.remove("bg-secondary")
+    mainId.classList.remove("bg-opacity-25")
+  }
+})
 
 // SORT:
 elOrderBy.addEventListener("click", function (evt) {
@@ -129,11 +157,12 @@ elBooksList.addEventListener("click", function (evt) {
       (item) => item.id === currentBookmark
     );
 
-    if (!boormarkArr.includes(foundBookmarkBook)) {
-      boormarkArr.unshift(foundBookmarkBook);
+    if (!bookmarkArr.includes(foundBookmarkBook)) {
+      bookmarkArr.unshift(foundBookmarkBook);
 
-      window.localStorage.setItem("bookmark", JSON.stringify(boormarkArr))
-      renderBookmark(boormarkArr, elBookmarkList);
+      resultBookmark.textContent = bookmarkArr.length;
+      window.localStorage.setItem("bookmark", JSON.stringify(bookmarkArr));
+      renderBookmark(bookmarkArr, elBookmarkList);
     }
   }
 });
@@ -162,20 +191,21 @@ const renderBookmark = function (arr, htmlElement) {
   elBookmarkList.innerHTML = null;
   htmlElement.appendChild(newFragment);
 };
-renderBookmark(boormarkArr, elBookmarkList);
+renderBookmark(bookmarkArr, elBookmarkList);
 
 elBookmarkList.addEventListener("click", function (evt) {
   const currentDelete = evt.target.dataset.bookmarkDeleteId;
   if (currentDelete) {
-    const foundBookmark = boormarkArr.findIndex(
+    const foundBookmark = bookmarkArr.findIndex(
       (item) => item.id === currentDelete
     );
 
-    boormarkArr.splice(foundBookmark, 1);
+    bookmarkArr.splice(foundBookmark, 1);
     elBookmarkList.innerHTML = null;
 
-    window.localStorage.setItem("bookmark", JSON.stringify(boormarkArr))
-    renderBookmark(boormarkArr, elBookmarkList);
+    resultBookmark.textContent = bookmarkArr.length;
+    window.localStorage.setItem("bookmark", JSON.stringify(bookmarkArr));
+    renderBookmark(bookmarkArr, elBookmarkList);
   }
 });
 
@@ -192,12 +222,11 @@ elModall.addEventListener("click", function (evt) {
 // PAGES:
 const renderPage = function (arr, elPageList) {
   elPageList.innerHTML = null;
-  console.log(arr);
+
   for (let i = 1; i <= Math.ceil(arr.totalItems / arr.items.length); i++) {
     const newItem = document.createElement("li");
     const newlink = document.createElement("a");
 
-    // newItem.setAttribute("class", "page__active")
     newlink.setAttribute("class", "page__active page-link");
     newlink.setAttribute("href", "#");
     newlink.textContent = i;
@@ -208,17 +237,18 @@ const renderPage = function (arr, elPageList) {
   }
 };
 
-elPageList.addEventListener("click", function (evt) {
-  elPageList.innerHTML = null;
-  page = evt.target.textContent;
+    elPageList.addEventListener("click", function (evt) {
+      elPageList.innerHTML = null;
+      page = evt.target.textContent;
 
-  if(page > 1){
-    elPagePrev.classList.remove("disabled");
-  } else {
-    elPagePrev.classList.add("disabled");
-  }
-  getBooks();
-});
+      if (page > 1) {
+        elPagePrev.classList.remove("disabled");
+      } else {
+        elPagePrev.classList.add("disabled");
+      }
+      getBooks();
+    });
+
 
 elPagesWrapper.addEventListener("click", function (evt) {
   const clickPrev = evt.target.matches(".page__prev");
@@ -227,17 +257,12 @@ elPagesWrapper.addEventListener("click", function (evt) {
 
   if (clickPrev && page > 1) {
     page--;
-
     elPageNext.classList.remove("disabled");
+
     if (page === 1) {
       elPagePrev.classList.add("disabled");
     }
   }
-
-  // if(page === evt.target.dataset.pageId){
-  //   console.log(page);
-  //   elPageActive.classList.add("active")
-  // }
 
   if (clickNext) {
     page++;
@@ -260,10 +285,13 @@ const getBooks = async function () {
   booksArr = await request.json();
 
   totalResult = booksArr.totalItems;
-  pagesLength = booksArr.items;
+  pagesLength = booksArr.items.length;
 
   if (totalResult >= 1 && page >= 1) {
     elBooksResult.textContent = booksArr.totalItems;
+    resultFrom.textContent = (page - 1) * pagesLength + 1;
+    resultTo.textContent = page * pagesLength;
+
     renderBooks(booksArr.items, elBooksList);
     renderPage(booksArr, elPageList);
   } else {
